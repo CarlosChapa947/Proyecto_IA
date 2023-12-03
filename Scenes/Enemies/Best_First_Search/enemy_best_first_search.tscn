@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhtxvliyou35y"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/Best_First_Search/enemy_best_first_search.gd" id="1_b4fnb"]
+[ext_resource type="Texture2D" uid="uid://5osjogko57sv" path="res://Graphics/Spritesheet/dragon_inferno.png" id="2_vbnmf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4gjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbegt"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(6, 64, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo2ay"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(69, 64, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn4c4"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(132, 64, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfiyq"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(195, 64, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob7ab"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(258, 64, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42fyl"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(321, 64, 63, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr1dp"]
+atlas = ExtResource("2_vbnmf")
+region = Rect2(384, 64, 63, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uh1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbegt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo2ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn4c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfiyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob7ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42fyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr1dp")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Enemy_Best_First_Search" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_b4fnb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t4gjn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5uh1u")
+animation = &"Idle"

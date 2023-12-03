@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvwgykju2cxr1"]
+
+[ext_resource type="Script" path="res://Scenes/Tilemaps/Custom_Tilemap/custom_tilemap.gd" id="1_4yppy"]
+
+[sub_resource type="TileSet" id="TileSet_5ll0f"]
+
+[node name="Custom_Tilemap" type="TileMap"]
+tile_set = SubResource("TileSet_5ll0f")
+format = 2
+layer_0/name = "Ground"
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("1_4yppy")
+
+[node name="Refresh" type="Timer" parent="."]

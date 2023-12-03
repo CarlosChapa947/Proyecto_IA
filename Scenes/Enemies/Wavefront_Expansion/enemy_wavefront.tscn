@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b04te5dxcpjr4"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/Wavefront_Expansion/Enemy_Wavefront.gd" id="1_cl4ik"]
+[ext_resource type="Texture2D" uid="uid://b161jh3iry2h1" path="res://Graphics/instant_dungeon_artpack_v2/instant_dungeon_artpack/By Voytek Falendysz/zombie.png" id="2_efm31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2flny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yglwh"]
+atlas = ExtResource("2_efm31")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrgnn"]
+atlas = ExtResource("2_efm31")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ad3un"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yglwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrgnn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Enemy_Wavefront" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_cl4ik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2flny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ad3un")
+animation = &"Idle"

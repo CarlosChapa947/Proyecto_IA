@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqqw0cupc2w1g"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/Astar/enemy_astar.gd" id="1_n6sxb"]
+[ext_resource type="Texture2D" uid="uid://daf3rknqyekd4" path="res://Graphics/Spritesheet/personaje_secundario.png" id="2_q2lu2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_co7hv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2cfy"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(0, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p0sk"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(64, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg02k"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(128, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvycc"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(192, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgi4y"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(256, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m84nh"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(320, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m11ki"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(384, 320, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsc2r"]
+atlas = ExtResource("2_q2lu2")
+region = Rect2(448, 320, 64, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbi4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2cfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p0sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg02k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvycc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgi4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m84nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m11ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsc2r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Enemy_Astar" type="CharacterBody2D"]
+script = ExtResource("1_n6sxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_co7hv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbi4j")
+animation = &"Idle"

@@ -18,3 +18,5 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_4yppy")
 
 [node name="Refresh" type="Timer" parent="."]
+
+[connection signal="timeout" from="Refresh" to="." method="_on_refresh_timeout"]

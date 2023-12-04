@@ -68,3 +68,7 @@ func propagate_wavefront(goal_position):
 #	var cell_size = Vector2(CELL_WIDTH, CELL_HEIGHT)  # Set the size of each grid cell in pixels
 #	return Vector2(floor(position.x / cell_size.x), floor(position.y / cell_size.y))
 
+
+
+func _on_refresh_timeout():
+	self.updateWavefront = true # Replace with function body.
